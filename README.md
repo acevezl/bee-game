@@ -1,2 +1,2 @@
 # bee-game
-Basico Godot Game of a Bee
+Basic Godot Game of a Bee
