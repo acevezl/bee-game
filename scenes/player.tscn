@@ -82,7 +82,7 @@ position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"fly"
 autoplay = "idle"
-frame_progress = 0.639181
+frame_progress = 0.740609
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
