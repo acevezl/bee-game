@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 @export var bullet_scene: PackedScene
 
 var speed: float = 400;
@@ -10,6 +10,7 @@ var lifes: int = 3;
 var can_shoot: bool = true
 var last_shot: int = Time.get_ticks_msec();
 var cooldown: int = 500
+var hit_count: int = 0
 
 var animated_sprite: AnimatedSprite2D;
 
@@ -50,4 +51,23 @@ func shoot():
 	bullet.direction = Vector2(1, 0)
 	add_sibling(bullet)
 
+func hit():
+	lifes-=1
+	if lifes==0:
+		$AnimatedSprite2D.play("die")
+	else:
+		$AnimatedSprite2D.play("hit")
+		
+
+
+func _on_animation_finished() -> void:
+	if animated_sprite.animation=="hit":
+		if hit_count<1:
+			hit_count+=1
+			$AnimatedSprite2D.play("hit")
+		else:
+			hit_count=0
+			$AnimatedSprite2D.play("default_state")
+	elif animated_sprite.animation:
+		self.queue_free()
 	

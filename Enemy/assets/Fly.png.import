@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sh5fffoeuhxh"
-path="res://.godot/imported/2.png-0d85d846913bc9a6ce73b214dc9ccffc.ctex"
+uid="uid://bq3ia6lsh3cey"
+path="res://.godot/imported/Fly.png-6a47b9449063ba34ca5b290a627554be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/assets/2.png"
-dest_files=["res://.godot/imported/2.png-0d85d846913bc9a6ce73b214dc9ccffc.ctex"]
+source_file="res://Enemy/assets/Fly.png"
+dest_files=["res://.godot/imported/Fly.png-6a47b9449063ba34ca5b290a627554be.ctex"]
 
 [params]
 

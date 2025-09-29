@@ -12,5 +12,5 @@ config_version=5
 
 config/name="2D Airplane Game"
 run/main_scene="uid://du2wxpc1g8id"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
