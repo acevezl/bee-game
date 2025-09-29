@@ -9,7 +9,7 @@ var coins: int = 0;
 var lifes: int = 3;
 var can_shoot: bool = true
 var last_shot: int = Time.get_ticks_msec();
-var cooldown: int = 500
+var cooldown: int = 250
 var hit_count: int = 0
 
 var animated_sprite: AnimatedSprite2D;
