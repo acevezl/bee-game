@@ -1,18 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://j70t6veixwee"]
+[gd_scene load_steps=13 format=3 uid="uid://j70t6veixwee"]
 
 [ext_resource type="Texture2D" uid="uid://c5txmd8l0h8in" path="res://assets/Fly.png" id="1_5sh1w"]
 [ext_resource type="Script" uid="uid://516h0es8rh60" path="res://fly/fly.gd" id="1_i6tsf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i6tsf"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6tsf"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(1, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3dhp"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(25, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et61v"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(49, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fwpv"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(73, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inc0a"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(1, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujaas"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(25, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naula"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(49, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1r73"]
+atlas = ExtResource("1_5sh1w")
+region = Rect2(73, 24, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3dhp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5sh1w")
+"texture": SubResource("AtlasTexture_i6tsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3dhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et61v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fwpv")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inc0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujaas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_naula")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1r73")
+}],
+"loop": true,
+"name": &"die",
 "speed": 5.0
 }]
 
@@ -25,4 +83,8 @@ script = ExtResource("1_i6tsf")
 shape = SubResource("CircleShape2D_i6tsf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_g3dhp")
+animation = &"die"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

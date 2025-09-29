@@ -11,8 +11,10 @@ script = ExtResource("1_4717r")
 enemy_scene = ExtResource("2_tcf2h")
 
 [node name="Bee" parent="." instance=ExtResource("1_6xmxd")]
+collision_mask = 2
 
 [node name="Fly" parent="." instance=ExtResource("2_tcf2h")]
+collision_layer = 2
 
 [node name="FlySpawnTimer" type="Timer" parent="."]
 autostart = true
