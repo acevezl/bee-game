@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://du2wxpc1g8id"]
+[gd_scene load_steps=10 format=3 uid="uid://du2wxpc1g8id"]
 
 [ext_resource type="Texture2D" uid="uid://ddu2khgk58doq" path="res://World/assets/1.png" id="1_04mge"]
 [ext_resource type="PackedScene" uid="uid://dstm5dh3mq7bf" path="res://Player/Player.tscn" id="1_folwd"]
 [ext_resource type="Texture2D" uid="uid://bwa6e3r2h8vma" path="res://World/assets/3.png" id="2_eue43"]
 [ext_resource type="PackedScene" uid="uid://ddebwsc8r8gm" path="res://Enemy/Enemy.tscn" id="2_mlekv"]
+[ext_resource type="PackedScene" uid="uid://dxealnjeik0rb" path="res://Bullet/bullet.tscn" id="4_4sj48"]
 [ext_resource type="Script" uid="uid://7k4p2abt07ou" path="res://World/static_body_2d.gd" id="4_il6x7"]
 [ext_resource type="Script" uid="uid://blc6arh8k5noo" path="res://World/enemy_spawner.gd" id="5_o14yy"]
 [ext_resource type="Script" uid="uid://cu0jh680qcbxi" path="res://World/coins_spawner.gd" id="6_04mge"]
@@ -34,6 +35,7 @@ texture = ExtResource("2_eue43")
 
 [node name="Player" parent="." instance=ExtResource("1_folwd")]
 collision_mask = 2
+bullet_scene = ExtResource("4_4sj48")
 
 [node name="CamBox" type="StaticBody2D" parent="."]
 collision_layer = 2

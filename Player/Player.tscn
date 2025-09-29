@@ -3,10 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b6g7uh38nsl6o" path="res://Player/assets/level1-plane-1.png" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://cn6bh4kg0uu2f" path="res://Player/player.gd" id="1_q3lat"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q3lat"]
-radius = 14.0
-height = 98.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tok1r"]
 animations = [{
 "frames": [{
@@ -18,13 +14,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q3lat"]
+radius = 14.0
+height = 98.0
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_q3lat")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -3.1415927
@@ -32,3 +28,7 @@ scale = Vector2(0.25396538, -0.24075748)
 sprite_frames = SubResource("SpriteFrames_tok1r")
 animation = &"default_state"
 autoplay = "default_state"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_q3lat")

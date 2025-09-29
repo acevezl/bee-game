@@ -4,6 +4,9 @@ extends Area2D
 
 var is_dead: bool = false
 
+func _ready() -> void:
+	add_to_group("enemies")
+
 func _physics_process(delta: float):
 	$AnimatedSprite2D.play("default");
 	position.x -= speed * delta;
@@ -18,6 +21,10 @@ func _physics_process(delta: float):
 func _on_body_entered(body: Node2D):
 	if "lifes" in body:
 		body.lifes -= 1
+		die()
+
+func _on_area_entered(area: Area2D):
+	if area.is_in_group("bullets"):
 		die()
 
 func die():
