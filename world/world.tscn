@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckexpfh3dbmvg"]
+
+[ext_resource type="PackedScene" uid="uid://bnmv8bdk3na7q" path="res://bee/bee.tscn" id="1_6xmxd"]
+[ext_resource type="Script" uid="uid://lop6bkb6m46t" path="res://world/world.gd" id="1_4717r"]
+[ext_resource type="PackedScene" uid="uid://j70t6veixwee" path="res://fly/fly.tscn" id="2_tcf2h"]
+[ext_resource type="Texture2D" uid="uid://bqp243ngeddr1" path="res://assets/background1.jpg" id="4_mmdvd"]
+[ext_resource type="Texture2D" uid="uid://bxkcyef7p18j7" path="res://assets/background2.png" id="5_fn3g3"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_4717r")
+enemy_scene = ExtResource("2_tcf2h")
+
+[node name="Bee" parent="." instance=ExtResource("1_6xmxd")]
+
+[node name="Fly" parent="." instance=ExtResource("2_tcf2h")]
+
+[node name="FlySpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("4_mmdvd")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(860, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 2
+texture = ExtResource("5_fn3g3")
+
+[connection signal="timeout" from="FlySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

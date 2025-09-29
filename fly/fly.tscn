@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://j70t6veixwee"]
+
+[ext_resource type="Texture2D" uid="uid://c5txmd8l0h8in" path="res://assets/Fly.png" id="1_5sh1w"]
+[ext_resource type="Script" uid="uid://516h0es8rh60" path="res://fly/fly.gd" id="1_i6tsf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6tsf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3dhp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5sh1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fly" type="RigidBody2D"]
+scale = Vector2(-1, -1)
+gravity_scale = 0.0
+script = ExtResource("1_i6tsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i6tsf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g3dhp")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnmv8bdk3na7q"]
+
+[ext_resource type="Script" uid="uid://ck2hpvglaqvll" path="res://bee/bee.gd" id="1_fgjkx"]
+[ext_resource type="Texture2D" uid="uid://c6qlimod25krt" path="res://assets/Bee.png" id="1_ksrey"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgjkx"]
+radius = 132.544
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvggy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ksrey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bee" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_fgjkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fgjkx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(27, 48)
+scale = Vector2(1, 0.890625)
+sprite_frames = SubResource("SpriteFrames_kvggy")
