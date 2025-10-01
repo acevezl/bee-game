@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddebwsc8r8gm"]
+
+[ext_resource type="Texture2D" uid="uid://cjdka4dcsgt0k" path="res://Enemy/assets/level1-plane2-1.png" id="1_3o4wt"]
+[ext_resource type="Script" uid="uid://bw2v0xf8jeu0i" path="res://Enemy/enemy.gd" id="1_epr5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epr5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3o4wt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epr5s"]
+radius = 14.0
+height = 98.0
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_epr5s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.254, 0.241)
+sprite_frames = SubResource("SpriteFrames_epr5s")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_epr5s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
