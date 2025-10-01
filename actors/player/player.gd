@@ -51,8 +51,8 @@ func shoot():
 	bullet.direction = Vector2(1, 0)
 	add_sibling(bullet)
 
-func hit():
-	lifes-=1
+func hit(damage: int):
+	lifes -= damage
 	if lifes==0:
 		$AnimatedSprite2D.play("die")
 	else:
@@ -69,5 +69,5 @@ func _on_animation_finished() -> void:
 			hit_count=0
 			$AnimatedSprite2D.play("default_state")
 	elif animated_sprite.animation:
-		self.queue_free()
+		queue_free()
 	

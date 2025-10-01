@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ujwmiermwyl"]
+
+[ext_resource type="PackedScene" uid="uid://dxealnjeik0rb" path="res://actors/bullet/bullet.tscn" id="1_bu27o"]
+[ext_resource type="Script" uid="uid://drpuca6iuaaba" path="res://actors/normal-bullet/NormalBullet.gd" id="2_vr0vr"]
+
+[node name="NormalBullet" instance=ExtResource("1_bu27o")]
+script = ExtResource("2_vr0vr")
